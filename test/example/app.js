@@ -16,19 +16,22 @@ module.exports = {
     pathname: '/api/accounts',
     dest: 'accounts.api.localhost',
     method: ['GET', 'POST'],
-    run: 'cd ./accounts && micro index.js -p 3002',
+    run: 'micro index.js -p 3002',
+    cwd: './accounts',
     debug: true
   }, {
     pathname: '/api/entries/*',
     method: 'GET',
     dest: 'entries.api.localhost',
-    run: 'cd ./entries && micro index.js -p 3003',
+    run: 'micro index.js -p 3003',
+    cwd: './entries',
     debug: true
   }, {
     pathname: '/api/entries/*',
     method: 'POST',
     dest: 'entries.api.localhost',
-    run: 'cd ./add-entry && micro index.js -p 3004',
+    run: 'micro index.js -p 3004',
+    cwd: './add-entry',
     debug: true
   }, {
     pathname: '/proxy',
